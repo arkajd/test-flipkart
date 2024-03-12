@@ -1,6 +1,6 @@
 package com.flipkart.models;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,6 +13,8 @@ import lombok.Setter;
 @Entity
 public class Product {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
 
     private String name;
@@ -21,6 +23,7 @@ public class Product {
 
     private String category;
 
+    @ManyToOne
     private Seller seller;
 
 }

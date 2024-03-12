@@ -1,6 +1,6 @@
 package com.flipkart.models;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,13 +15,15 @@ import java.util.List;
 @Entity
 public class Order {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
 
+    @OneToMany
     private List<Product> productList;
 
+    @ManyToOne
     private User user;
 
     private int total;
-
-    private Cart cart;
 }
