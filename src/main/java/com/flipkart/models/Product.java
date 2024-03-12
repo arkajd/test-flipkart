@@ -1,15 +1,26 @@
 package com.flipkart.models;
 
+import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
 public class Product {
 
-    long id;
+    private long id;
 
-    String name;
+    private String name;
 
-    String description;
+    private String description;
 
-    String category;
+    private String category;
 
-    Seller seller;
+    private Seller seller;
 
 }

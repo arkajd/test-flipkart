@@ -1,14 +1,25 @@
 package com.flipkart.models;
 
+import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.util.List;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
 public class Cart {
 
-    long id;
+    private long id;
 
-    User user;
+    private User user;
 
-    List<Product> productList;
+    private List<Product> productList;
 
-    int amount;
+    private int amount;
 }

@@ -1,7 +1,7 @@
 package com.flipkart.models;
 
-import com.flipkart.models.enums.PaymentMode;
-import jakarta.persistence.Entity;
+import com.flipkart.models.User;
+import com.flipkart.models.enums.NotificationType;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import lombok.AllArgsConstructor;
@@ -13,13 +13,16 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-public class Payment {
+public class Notification {
 
     private long id;
 
-    private Order order;
+    private User receiver;
+
+    private String sender;
+
+    private String message;
 
     @Enumerated(EnumType.STRING)
-    PaymentMode paymentMode;
+    private NotificationType notificationType;
 }
