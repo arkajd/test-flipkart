@@ -11,6 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name = "products")
 public class Product {
 
     @Id
@@ -21,7 +22,8 @@ public class Product {
 
     private String description;
 
-    private String category;
+    @ManyToOne
+    private Category category;
 
     @ManyToOne
     private Seller seller;

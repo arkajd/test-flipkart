@@ -13,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name = "carts")
 public class Cart {
 
     @Id
@@ -20,8 +21,9 @@ public class Cart {
     private long id;
 
     @OneToOne
-    private User user;
+    private Customer customer;
 
+    @OneToMany
     private List<Product> productList;
 
     private int amount;

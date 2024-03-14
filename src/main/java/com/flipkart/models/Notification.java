@@ -1,6 +1,5 @@
 package com.flipkart.models;
 
-import com.flipkart.models.User;
 import com.flipkart.models.enums.NotificationType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -12,6 +11,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "notifications")
 public class Notification {
 
     @Id
@@ -19,7 +19,7 @@ public class Notification {
     private long id;
 
     @ManyToOne
-    private User receiver;
+    private Customer receiver;
 
     private String sender;
 

@@ -13,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name = "orders")
 public class Order {
 
     @Id
@@ -23,7 +24,7 @@ public class Order {
     private List<Product> productList;
 
     @ManyToOne
-    private User user;
+    private Customer customer;
 
     private int total;
 }
